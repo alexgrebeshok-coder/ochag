@@ -1,49 +1,33 @@
-# @ochag/family
+# @ochag/family — Очаг AI
 
-**Очаг** — семейный AI-помощник.
+> **Семейный AI-компаньон**: Memory, Family Calendar, Voice Profile, Vault, Telegram Mini App
 
-*«Очаг — твой семейный AI. Запоминает важное, не отдаёт никому, не продаёт рекламу.»*
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Package](https://img.shields.io/badge/npm-%40ochag%2Ffamily-orange)](https://npm.pkg.github.com)
 
-**License:** Apache 2.0
-**Status:** 🔧 R1 migration + 🚀 Phase 1 active development
+## Пакет
 
----
-
-## What lives here
-
-| Module | Description |
-|--------|-------------|
-| `src/family-calendar/` | Семейный календарь (дни рождения, школа, события) |
-| `src/voice-profile/` | Voice profile per family member |
-| `src/vault/` | Защищённое хранилище (пароли, документы) — Family+ tier |
-| `src/reminders/` | Персональные напоминания для членов семьи |
-| `src/brief/` | Утренний брифинг семейного дня |
-| `src/tma/` | Telegram Mini App entry points |
-| `src/safety/` | Child safety policy, consent log |
-
-## ICP
-
-Взрослый 28–55 в семье, есть супруг(а), 0–3 детей, Telegram-пользователь.
-
-## Pricing
-
-Free → Personal 290₽ → Family (до 3) 390₽ → Family+ (до 6, Vault, биометрия) 990₽
-
-## Dependencies
-
-```
-@ochag/family → @ceoclaw/engine
-@ochag/family → @ceoclaw/ui
+```ts
+import { FamilyPlan, getUpcomingReminders, isTopicAllowed } from '@ochag/family'
 ```
 
-## Development
+## Модули
+
+| Модуль | Описание |
+|--------|----------|
+| `types` | FamilyPlan, FamilyRole, VaultCategory, domain interfaces |
+| `reminders` | getUpcomingReminders, getOverdueReminders, formatReminderMessage |
+| `safety` | getEffectiveBlockedTopics, isTopicAllowed, hasExceededScreenTime |
+| `vault` | parseVaultPayload, serializeVaultPayload, vaultSummary |
+
+## Установка
 
 ```bash
-pnpm --filter @ochag/family dev
-pnpm --filter @ochag/family typecheck
-pnpm --filter @ochag/family test
+npm install @ochag/family --registry=https://npm.pkg.github.com
 ```
 
-## Domain
+## Часть экосистемы CEOClaw
 
-`ochag.ai`, bot: `@ochagbot`
+- [@ceoclaw/engine](https://github.com/alexgrebeshok-coder/ceoclaw-engine) — AI engine (Apache 2.0)
+- [@ochag/family](https://github.com/alexgrebeshok-coder/ceoclaw-ochag) — Семья (Apache 2.0)
+- [@freeclaude/coder](https://github.com/alexgrebeshok-coder/ceoclaw-freeclaude) — Coder CLI (Apache 2.0)
