@@ -1,20 +1,29 @@
 {
   "name": "@ochag/family",
   "version": "0.1.0",
-  "description": "Очаг — семейный AI: Memory, Family Calendar, Voice Profile, Vault, Telegram Mini App",
+  "description": "Lightweight shared package for Ochag reminders, safety, and vault helpers",
   "license": "Apache-2.0",
   "private": false,
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsc --build",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "npm run typecheck",
     "dev": "tsc --build --watch"
   },
-  "dependencies": {
-    "@ceoclaw/engine": "workspace:*",
-    "@ceoclaw/ui": "workspace:*"
+  "devDependencies": {
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "typescript": ">=5.0.0"

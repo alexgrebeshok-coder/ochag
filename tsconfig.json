@@ -1,19 +1,15 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "declaration": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "outDir": "./dist",
-    "rootDir": "./src",
-    "paths": {
-      "@ceoclaw/engine": ["../engine/src/index.ts"],
-      "@ceoclaw/engine/*": ["../engine/src/*"],
-      "@ceoclaw/ui": ["../ui/src/index.ts"],
-      "@ceoclaw/ui/*": ["../ui/src/*"]
-    }
+    "rootDir": "./src"
   },
-  "references": [
-    { "path": "../engine" },
-    { "path": "../ui" }
-  ],
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
 }

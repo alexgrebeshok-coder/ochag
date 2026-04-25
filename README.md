@@ -1,9 +1,13 @@
-# @ochag/family — Очаг AI
+# @ochag/family
 
-> **Семейный AI-компаньон**: Memory, Family Calendar, Voice Profile, Vault, Telegram Mini App
+> Lightweight shared package for **Ochag** reminders, family safety rules, and vault payload helpers.
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Package](https://img.shields.io/badge/npm-%40ochag%2Ffamily-orange)](https://npm.pkg.github.com)
+
+## Роль репозитория
+
+Этот репозиторий хранит небольшой standalone package `@ochag/family`, а не полный end-user продукт.
 
 ## Пакет
 
@@ -26,8 +30,16 @@ import { FamilyPlan, getUpcomingReminders, isTopicAllowed } from '@ochag/family'
 npm install @ochag/family --registry=https://npm.pkg.github.com
 ```
 
-## Часть экосистемы CEOClaw
+## Что экспортируется
 
-- [@ceoclaw/engine](https://github.com/alexgrebeshok-coder/ceoclaw-engine) — AI engine (Apache 2.0)
-- [@ochag/family](https://github.com/alexgrebeshok-coder/ceoclaw-ochag) — Семья (Apache 2.0)
-- [@freeclaude/coder](https://github.com/alexgrebeshok-coder/ceoclaw-freeclaude) — Coder CLI (Apache 2.0)
+- `reminders` — upcoming/overdue reminder helpers
+- `safety` — child-safety policy helpers
+- `vault` — vault payload serialization helpers
+- `types` — public family domain types
+
+## Часть экосистемы
+
+- [ceoclaw](https://github.com/alexgrebeshok-coder/ceoclaw) — private dashboard product repo
+- [pyrfor](https://github.com/alexgrebeshok-coder/pyrfor) — runtime / engine repo
+- [freeclaude](https://github.com/alexgrebeshok-coder/freeclaude) — main FreeClaude CLI / workspace
+- [ceoclaw-freeclaude](https://github.com/alexgrebeshok-coder/ceoclaw-freeclaude) — lightweight shared FreeClaude package repo
